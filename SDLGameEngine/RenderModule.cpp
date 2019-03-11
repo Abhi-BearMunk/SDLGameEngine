@@ -1,6 +1,8 @@
 #include "RenderModule.h"
 #include "Renderer.h"
 #include "GameObject.h"
+#include <stdio.h>
+#include <string>
 
 int RenderModule::numberOfLayers = 2;
 std::vector<std::list<Renderer*>> RenderModule::renderers = std::vector<std::list<Renderer*>>();

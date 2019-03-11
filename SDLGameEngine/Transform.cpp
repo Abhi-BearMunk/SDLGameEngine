@@ -188,8 +188,8 @@ void Transform::SetRelativeScale(const Vector2& _scale)
 	else
 	{
 		const Vector2& parentScale = parent->GetAbsoluteScale();
-		scale.x = scale.x * parentScale.x;
-		scale.y = scale.y * parentScale.y;
+		scale.x = relativeScale.x * parentScale.x;
+		scale.y = relativeScale.y * parentScale.y;
 	}
 	for (Transform* t : children)
 	{
@@ -248,15 +248,6 @@ void Transform::SetParent(Transform* _parent)
 
 void Transform::SetParentRelative(Transform* _parent)
 {
-	/*Vector2 relativePos = GetAbsolutePosition() - _parent->GetAbsolutePosition();
-	const float& parentAngle = -_parent->GetAbsoluteAngle();
-	position =  Vector2(relativePos.x * cos(parentAngle) - relativePos.y * sin(parentAngle), relativePos.x * sin(parentAngle) + relativePos.y * cos(parentAngle));
-	angle = GetAbsoluteAngle() - _parent->GetAbsoluteAngle();
-	const Vector2& parentScale = _parent->GetAbsoluteScale();
-	const Vector2& myScale = GetAbsoluteScale();
-	scale.x = parentScale.x != 0 ? myScale.x / parentScale.x : 1;
-	scale.y = parentScale.y != 0 ? myScale.y / parentScale.y : 1;
-	parent = _parent;*/
 	if (parent != NULL)
 	{
 		parent->children.remove(this);

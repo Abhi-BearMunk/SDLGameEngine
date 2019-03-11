@@ -1,6 +1,5 @@
 #pragma once
 #include "Component.h"
-#include "Texture.h"
 #include "Vector2.h"
 
 class Renderer:

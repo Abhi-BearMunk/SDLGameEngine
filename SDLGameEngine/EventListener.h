@@ -22,6 +22,7 @@ public:
 	void operator()(const T& t);
 
 	bool IsNotNull();
+	bool disabled =  false;
 };
 
 template <class T> EventListener<T>::EventListener(const function &_handler)
@@ -36,12 +37,18 @@ template <class T> EventListener<T>::~EventListener()
 
 template <class T> void EventListener<T>::Handle(const T& t)
 {
-	handler(t);
+	if (!disabled)
+	{
+		handler(t);
+	}
 }
 
 template <class T> void EventListener<T>::operator()(const T& t)
 {
-	handler(t);
+	if (!disabled)
+	{
+		handler(t);
+	}
 }
 
 template <class T> bool EventListener<T>::IsNotNull()

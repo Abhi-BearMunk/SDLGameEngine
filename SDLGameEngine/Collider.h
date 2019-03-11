@@ -6,6 +6,7 @@
 class Ray;
 class RaycastHit;
 class Rigidbody;
+class TransformData;
 class Collider :
 	public Component
 {
@@ -19,8 +20,6 @@ public:
 	virtual void Awake();
 	virtual void FixedUpdate();
 	virtual void Cleanup();
-
-	void SetRigidBody();
 
 	void SetTrigger(bool toggle);
 	bool GetTrigger();
@@ -36,12 +35,27 @@ public:
 
 	std::shared_ptr<EventListener<Rigidbody*>> OnRigidbodyAdded = nullptr;
 	//std::shared_ptr<EventListener<Rigidbody*>> OnRigidbodyRemoved = std::make_shared<EventListener<Rigidbody*>>(std::bind(&RigidbodyRemoved, this));
+	std::shared_ptr<EventListener<TransformData>> onTransformUpdate = nullptr;
 
 	void RigidbodyAdded(Rigidbody* rigidbody);
 	//void RigidbodyRemoved(Rigidbody* rigidbody);
 
+	// Box2D functions
+	void SetRestitution(float _restitution);
+	void SetFriction(float _friction);
+	void SetDensity(float _density);
+
+	float GetRestitution();
+	float GetFriction();
+	float GetDensity();
+
 protected:
 	bool isTrigger = false;
 	Rigidbody* rigidbody = NULL;
+
+	virtual void SetFixtureDef() = 0;
+	virtual void SetRelativeValues() = 0;
+	void ResetFixture();
+	void UpdateTransform(const TransformData &tData);
 };
 

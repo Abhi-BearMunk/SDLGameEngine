@@ -5,6 +5,8 @@
 #include "Ray.h"
 #include "RaycastHit.h"
 #include "Rect.h"
+#include "Transform.h"
+#include "TransformData.h"
 
 Collider::Collider()
 {
@@ -24,6 +26,8 @@ void Collider::Cleanup()
 		RemoveCollider(rigidbody);
 	}
 	gameObject->OnAddRigidbody.RemoveListener(OnRigidbodyAdded);
+	gameObject->transform->OnTransformUpdate.RemoveListener(onTransformUpdate);
+
 	//gameObject->OnRemoveRigidbody.RemoveListener(OnRigidbodyRemoved);
 }
 
@@ -37,22 +41,11 @@ void Collider::Awake()
 	//OnRigidbodyRemoved = std::make_shared<EventListener<Rigidbody*>>(std::bind(&RigidbodyRemoved, this));*/
 	gameObject->OnAddRigidbody.AddListener(OnRigidbodyAdded);
 	//gameObject->OnRemoveRigidbody.AddListener(OnRigidbodyRemoved);
+	onTransformUpdate = std::make_shared<EventListener<TransformData>>(std::bind(&Collider::UpdateTransform, this, std::placeholders::_1));
+	gameObject->transform->OnTransformUpdate.AddListener(onTransformUpdate);
+
 }
 
-void Collider::SetRigidBody()
-{
-	/*Transform* t = gameObject->transform;
-	while (rigidbody == nullptr && t != nullptr)
-	{
-		rigidbody = t->gameObject->GetComponent<Rigidbody>();
-		t = t->parent;
-	}
-	if (rigidbody && !rigidbody->ContainsCollider(this))
-	{
-		rigidbody->AddCollider(this);
-	}*/
-	AddCollider(gameObject->rigidbody);
-}
 
 void Collider::FixedUpdate()
 {
@@ -126,9 +119,11 @@ RaycastHit Collider::Raycast(Ray ray, float maxDistance)
 }
 
 void Collider::AddCollider(Rigidbody* _rigidbody)
-{
-	_rigidbody->AddCollider(this);
+{	
 	rigidbody = _rigidbody;
+	SetRelativeValues();
+	SetFixtureDef();
+	_rigidbody->AddCollider(this);
 }
 
 void Collider::RemoveCollider(Rigidbody* _rigidbody)
@@ -152,6 +147,27 @@ void Collider::RigidbodyAdded(Rigidbody* _rigidbody)
 	}
 }
 
+void Collider::UpdateTransform(const TransformData &tData)
+{
+	SetRelativeValues();
+	ResetFixture();
+}
+
+void Collider::ResetFixture()
+{
+	SetFixtureDef();
+	if (rigidbody)
+	{
+		if (fixture)
+		{
+			rigidbody->RemoveCollider(this);
+		}
+		rigidbody->AddCollider(this);
+	}
+}
+
+
+
 //void Collider::RigidbodyRemoved(Rigidbody* _rigidbody)
 //{
 //	if (_rigidbody == rigidbody)
@@ -164,3 +180,42 @@ void Collider::RigidbodyAdded(Rigidbody* _rigidbody)
 //		}
 //	}
 //}
+
+
+void Collider::SetRestitution(float _restitution)
+{
+	fixtureDef.restitution = _restitution;
+	if (fixture)
+	{
+		fixture->SetRestitution(_restitution);
+	}
+}
+void Collider::SetFriction(float _friction)
+{
+	fixtureDef.friction = _friction;
+	if (fixture)
+	{
+		fixture->SetFriction(_friction);
+	}
+}
+void Collider::SetDensity(float _density)
+{
+	fixtureDef.density = _density;
+	if (fixture)
+	{
+		fixture->SetDensity(_density);
+	}
+}
+
+float Collider::GetRestitution()
+{
+	return fixture->GetRestitution();
+}
+float Collider::GetFriction()
+{
+	return fixture->GetFriction();
+}
+float Collider::GetDensity()
+{
+	return fixture->GetDensity();
+}
