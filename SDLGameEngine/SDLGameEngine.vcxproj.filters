@@ -62,6 +62,9 @@
     <Filter Include="Shooter">
       <UniqueIdentifier>{425c115b-a6e6-4b7f-b920-e63b558b8aaf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Midterm">
+      <UniqueIdentifier>{1f0ecddd-0537-4620-8e82-c311b86e8574}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -210,6 +213,12 @@
     </ClCompile>
     <ClCompile Include="Pursue.cpp">
       <Filter>SteeringBehaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="MidtermGame.cpp">
+      <Filter>Midterm</Filter>
+    </ClCompile>
+    <ClCompile Include="MidtermScene.cpp">
+      <Filter>Midterm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -365,6 +374,12 @@
     </ClInclude>
     <ClInclude Include="Pursue.h">
       <Filter>SteeringBehaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="MidtermGame.h">
+      <Filter>Midterm</Filter>
+    </ClInclude>
+    <ClInclude Include="MidtermScene.h">
+      <Filter>Midterm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

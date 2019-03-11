@@ -156,6 +156,8 @@
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Flee.cpp" />
+    <ClCompile Include="MidtermGame.cpp" />
+    <ClCompile Include="MidtermScene.cpp" />
     <ClCompile Include="MoveInCircle.cpp" />
     <ClCompile Include="ObstacleAvoidance.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
@@ -213,6 +215,8 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="LayerdStorage.h" />
+    <ClInclude Include="MidtermGame.h" />
+    <ClInclude Include="MidtermScene.h" />
     <ClInclude Include="Module.h" />
     <ClInclude Include="MoveInCircle.h" />
     <ClInclude Include="ObstacleAvoidance.h" />
