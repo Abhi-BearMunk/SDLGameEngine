@@ -97,9 +97,6 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Engine\Source Files\Core\Helpers</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Engine\Source Files\Core\Helpers</Filter>
-    </ClCompile>
     <ClCompile Include="Time.cpp">
       <Filter>Engine\Source Files\Core\Modules</Filter>
     </ClCompile>

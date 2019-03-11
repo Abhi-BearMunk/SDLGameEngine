@@ -55,7 +55,7 @@ public:
 private:
     float worldScale = 100;
 	Vector2 gravity = Vector2(0, 1000);
-	b2World world = b2World(b2Vec2(0, 10));
+	b2World world = b2World(b2Vec2(0, 0));
 
 	uint32_t velocityIterations = 8;
 	uint32_t positionIterations = 3;

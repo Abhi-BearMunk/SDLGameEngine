@@ -188,7 +188,6 @@
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="SteeringAgent.cpp" />
     <ClCompile Include="SteeringBehaviour.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="UpdateTarget.cpp" />
