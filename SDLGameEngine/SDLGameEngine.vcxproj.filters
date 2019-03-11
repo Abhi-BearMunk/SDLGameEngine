@@ -220,6 +220,9 @@
     <ClCompile Include="MidtermScene.cpp">
       <Filter>Midterm</Filter>
     </ClCompile>
+    <ClCompile Include="ChangeColor.cpp">
+      <Filter>Midterm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h">
@@ -380,6 +383,12 @@
     </ClInclude>
     <ClInclude Include="MidtermScene.h">
       <Filter>Midterm</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeColor.h">
+      <Filter>Midterm</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderer.h">
+      <Filter>Engine\Header Files\Core\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
