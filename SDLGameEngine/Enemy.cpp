@@ -5,6 +5,7 @@
 #include "Physics.h"
 #include "RaycastHit.h"
 #include "Game.h"
+#include "Time.h"
 
 Enemy::Enemy()
 {
@@ -18,10 +19,20 @@ Enemy::~Enemy()
 
 void Enemy::Update()
 {
+
 	Behaviour::Update();
-	if (Input::GetKeyDown(SDLK_SPACE))
+
+	if (abs(player->GetAbsolutePosition().y - gameObject->transform->GetAbsolutePosition().y) < 300)
 	{
-		//gameObject->GetComponent<Rigidbody>()->SetBodyType(Rigidbody::kinematicBody);
+		timer += Time::DeltaTime();
+		if (timer > time)
+		{
+			// Shoot
+			gameObject->transform->SetAbsoluteAngle(atan2(player->GetAbsolutePosition().y - gameObject->transform->GetAbsolutePosition().y, player->GetAbsolutePosition().x - gameObject->transform->GetAbsolutePosition().x) * 180.0f / M_PI);
+			Instantiate(game->Prefab("Bullet"), gameObject->transform->GetAbsolutePosition() + 50 * gameObject->transform->Right(), gameObject->transform->GetAbsoluteAngle() - 90);
+			timer = 0;
+		}
 	}
-	//RaycastHit hit = game->physics->Raycast(gameObject->transform->GetAbsolutePosition(), -gameObject->transform->Up(), 10000);
+	
+
 }

@@ -7,6 +7,6 @@ public:
 	CameraFollow();
 	~CameraFollow();
 
-	void Update();
+	void FixedUpdate();
 };
 

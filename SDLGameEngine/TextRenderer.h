@@ -7,7 +7,7 @@ class TextRenderer :
 	public Renderer
 {
 public:
-	TextRenderer(std::string _fontPath, int size, std::string _text = "");
+	TextRenderer(std::string _fontPath, int size, std::string _text = "", int layer = 0);
 	~TextRenderer();
 
 	void Render();

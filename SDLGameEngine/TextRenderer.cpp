@@ -3,7 +3,7 @@
 #include "Rect.h"
 
 
-TextRenderer::TextRenderer(std::string _fontPath, int size, std::string _text)
+TextRenderer::TextRenderer(std::string _fontPath, int size, std::string _text, int _layer) : Renderer(_layer)
 {
 	gFont = TTF_OpenFont(_fontPath.c_str(), size);
 	text = _text;
@@ -69,18 +69,6 @@ void TextRenderer::Render()
 	renderQuad.h = (scaledHeight);
 	SDL_RendererFlip flip = flipX ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE | flipY ? SDL_FLIP_VERTICAL : SDL_FLIP_NONE;
 	SDL_RenderCopyEx(Game::gRenderer, texture, NULL, &renderQuad, ceil(gameObject->transform->GetAbsoluteAngle()), &pivot, flip);
-
-	SDL_SetRenderDrawColor(Game::gRenderer, 0x00, 0xFF, 0x00, 0xFF);
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 3; j++)
-		{
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x - i, yPos + pivot.y - j);
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x - i, yPos + pivot.y + j);
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x + i, yPos + pivot.y - j);
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x + i, yPos + pivot.y + j);
-		}
-	}
 }
 
 // BUGGY

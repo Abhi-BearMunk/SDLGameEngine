@@ -77,18 +77,6 @@ void SpriteRenderer::Render()
 	renderQuad.h = (scaledHeight);
 	SDL_RendererFlip flip = flipX ? SDL_FLIP_HORIZONTAL : SDL_FLIP_NONE | flipY ? SDL_FLIP_VERTICAL : SDL_FLIP_NONE;
 	SDL_RenderCopyEx(Game::gRenderer, texture, sprite->GetClipFrame(), &renderQuad, ceil(gameObject->transform->GetAbsoluteAngle()), &pivot, flip);
-
-	SDL_SetRenderDrawColor(Game::gRenderer, 0x00, 0xFF, 0x00, 0xFF);
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 3; j++)
-		{
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x - i, yPos + pivot.y - j);
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x - i, yPos + pivot.y + j);
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x + i, yPos + pivot.y - j);
-			SDL_RenderDrawPoint(Game::gRenderer, xPos + pivot.x + i, yPos + pivot.y + j);
-		}
-	}
 }
 
 void SpriteRenderer::SetColor(Color _color)

@@ -13,6 +13,8 @@ public:
 	void BulletPrefab(GameObject* go);
 	void EnemyPrefab(GameObject* go);
 	void WallPrefab(GameObject* go);
+	void WallBlockPrefab(GameObject* go);
 	void GatePrefab(GameObject* go);
+	void FloorPrefab(GameObject* go);
 };
 

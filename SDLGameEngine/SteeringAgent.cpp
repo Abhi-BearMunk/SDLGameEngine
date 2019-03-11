@@ -20,7 +20,7 @@ SteeringAgent::~SteeringAgent()
 void SteeringAgent::Start()
 {
 	rb = gameObject->GetComponent<Rigidbody>();
-	rb->SetMass(0.01f);
+	//rb->SetMass(0.01f);
 }
 
 
@@ -30,7 +30,7 @@ void SteeringAgent::Update()
 	{
 		if (rb)
 		{
-			rb->AddForce(steering->steering.weight * steering->steering.linear);
+			rb->AddForce(steering->steering.weight * steering->steering.linear * 100);
 		}
 		velocity += steering->steering.weight * steering->steering.linear;
 		angularSpeed += steering->steering.weight * steering->steering.angular;

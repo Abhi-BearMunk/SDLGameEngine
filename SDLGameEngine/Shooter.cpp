@@ -70,7 +70,7 @@ void Shooter::WallPrefab(GameObject* go)
 	BoxCollider* col = new BoxCollider();
 	go->AddComponent(col);
 	col->SetCategory(physics->Layer_2);
-	col->SetDimension(Vector2(300, 60));
+	col->SetDimension(Vector2(900, 180));
 }
 
 void Shooter::EnemyPrefab(GameObject* go)

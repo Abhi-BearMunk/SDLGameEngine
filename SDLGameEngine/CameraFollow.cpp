@@ -13,7 +13,7 @@ CameraFollow::~CameraFollow()
 {
 }
 
-void CameraFollow::Update()
+void CameraFollow::FixedUpdate()
 {
 	Camera::x = (gameObject->transform->GetAbsolutePosition().x) - (Camera::width * 0.5f);
 	Camera::y = (gameObject->transform->GetAbsolutePosition().y) - (Camera::height * 0.5f);

@@ -175,22 +175,10 @@
     <ClCompile Include="SteeringBehaviour.cpp">
       <Filter>SteeringBehaviours</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>Shooter</Filter>
-    </ClCompile>
-    <ClCompile Include="CameraFollow.cpp">
-      <Filter>Shooter</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Shooter</Filter>
-    </ClCompile>
     <ClCompile Include="Flee.cpp">
       <Filter>SteeringBehaviours</Filter>
     </ClCompile>
     <ClCompile Include="MoveInCircle.cpp">
-      <Filter>Shooter</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerControls.cpp">
       <Filter>Shooter</Filter>
     </ClCompile>
     <ClCompile Include="Scene1.cpp">
@@ -218,6 +206,21 @@
       <Filter>Midterm</Filter>
     </ClCompile>
     <ClCompile Include="ChangeColor.cpp">
+      <Filter>Midterm</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRenderer.cpp">
+      <Filter>Engine\Source Files\Core\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Midterm</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraFollow.cpp">
+      <Filter>Midterm</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Midterm</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerControls.cpp">
       <Filter>Midterm</Filter>
     </ClCompile>
   </ItemGroup>
@@ -339,22 +342,10 @@
     <ClInclude Include="SteeringBehaviour.h">
       <Filter>SteeringBehaviours</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>Shooter</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraFollow.h">
-      <Filter>Shooter</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Shooter</Filter>
-    </ClInclude>
     <ClInclude Include="Flee.h">
       <Filter>SteeringBehaviours</Filter>
     </ClInclude>
     <ClInclude Include="MoveInCircle.h">
-      <Filter>Shooter</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerControls.h">
       <Filter>Shooter</Filter>
     </ClInclude>
     <ClInclude Include="Scene1.h">
@@ -386,6 +377,18 @@
     </ClInclude>
     <ClInclude Include="TextRenderer.h">
       <Filter>Engine\Header Files\Core\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Midterm</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraFollow.h">
+      <Filter>Midterm</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Midterm</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerControls.h">
+      <Filter>Midterm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

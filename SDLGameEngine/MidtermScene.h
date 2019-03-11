@@ -6,5 +6,7 @@ class MidtermScene :
 public:
 	MidtermScene();
 	~MidtermScene();
+
+	void Setup();
 };
 
