@@ -9,7 +9,7 @@ The following functionalities are availible as of now in the master branch.
 - Hierarchial Transform system
 - An event system
 - A basic prefab system
-- Easy to use Keyboard and Mouse inputs
+- Easy to use Keyboard and basic Mouse inputs
 - A robust physics system with layering which respects the Transform hierarchy
 - Rigidbodies, colliders, triggers (though only BoxColliders for now, Circles coming soon) and Raycasts
 - Basic Text rendering
