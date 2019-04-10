@@ -1,7 +1,7 @@
 # SDLGameEngine
 
 This is a simple lightweight 2D game engine for PC built using SDL and Box2D.
-Currently the engine is fully functional but not feature complete. I had made this keeping Unity developers in mind so most of the terminology in the engine (GameObjects, Components, Scenes, Rigidbodies etc.) would be very familiar to those used to unity, but you should be right at home if you have experience with any EC framework.
+Currently the engine is fully functional but not feature complete. I had started making this keeping Unity developers in mind so most of the terminology in the engine (GameObjects, Components, Scenes, Rigidbodies etc.) would be very familiar to those used to unity, but you should be right at home if you have experience with any EC framework.
 The following functionalities are availible as of now in the master branch.
 
 - A Entity Component framework 
