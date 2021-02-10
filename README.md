@@ -20,5 +20,4 @@ Though not a part of the Master branch, the following can also be found in the E
 - A Steering Behaviour implementation
 
 Please be aware that though I have done so wherever I could, this is still a personal project, which has not had rigorous bug testing, so use at your own risk.
-Please email abhishekchandra2005@gmail.com if interested in collaborating.
 
